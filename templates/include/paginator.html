@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>PAGINATOR | TEST</title>
+</head>
+<body>
+    <div class="mb-3">
+        <label for="" class="form-label">Name</label>
+        <input
+            type="text"
+            class="form-control"
+            name=""
+            id=""
+            aria-describedby="helpId"
+            placeholder=""
+        />
+        <small id="helpId" class="form-text text-muted">Help text</small>
+    </div>
+
+    <h1>Comments below</h1>
+    <ul>
+        {% for comment in page_obj %}
+            <li>{{ comment.user_coments }}</li>
+        {% endfor %}
+    </ul>
+
+
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; primeira</a>
+                <a href="?page={{ page_obj.previous_page_number }}">pagina anterior</a>
+            {% endif %}
+
+            <span class="current">
+                Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.
+            </span>
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">proxima</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">última &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+</body>
+</html>
