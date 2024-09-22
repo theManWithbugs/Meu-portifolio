@@ -5,6 +5,7 @@
     <title>PAGINATOR | TEST</title>
 </head>
 <body>
+<<<<<<< HEAD
 
     <h1>Meu portifolio</h1>
     <ul>
@@ -13,6 +14,25 @@
             <h4>{{ profile.text_title }}</h4>
             <li>{{ profile.text_profile }}</li>
         </div>
+=======
+    <div class="mb-3">
+        <label for="" class="form-label">Name</label>
+        <input
+            type="text"
+            class="form-control"
+            name=""
+            id=""
+            aria-describedby="helpId"
+            placeholder=""
+        />
+        <small id="helpId" class="form-text text-muted">Help text</small>
+    </div>
+
+    <h1>Comments below</h1>
+    <ul>
+        {% for comment in page_obj %}
+            <li>{{ comment.user_coments }}</li>
+>>>>>>> 094a617d82c9131fa2dbec39e508b46cb2394086
         {% endfor %}
     </ul>
 

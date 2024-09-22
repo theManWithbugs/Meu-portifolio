@@ -17,9 +17,17 @@ class NomeUser(models.Model):
         super().save(*args, **kwargs)
 
 
+<<<<<<< HEAD
 class Profile(models.Model):
     text_title = models.CharField(max_length=80)
     text_profile = models.CharField(max_length=450)
 
     def __str__(self):
         return self.text_profile
+=======
+class Comment(models.Model):
+    user_coments = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.user_coments
+>>>>>>> 094a617d82c9131fa2dbec39e508b46cb2394086
