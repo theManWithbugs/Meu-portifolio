@@ -6,13 +6,8 @@ from core.models import *
 from django.core.paginator import Paginator
 
 def form_view(request):
-<<<<<<< HEAD
     text = Profile.objects.all()
     paginator = Paginator(text, 4)
-=======
-    user_coments = Comment.objects.all()
-    paginator = Paginator(user_coments, 5)
->>>>>>> 094a617d82c9131fa2dbec39e508b46cb2394086
 
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
@@ -43,20 +38,14 @@ def base_view(request):
     return render(request, 'base.html')
 
 def comments_list(request):
-<<<<<<< HEAD
     text = Profile.objects.all()
     paginator = Paginator(text, 5)
-=======
-    user_coments = Comment.objects.all()
-    paginator = Paginator(user_coments, 5)
->>>>>>> 094a617d82c9131fa2dbec39e508b46cb2394086
 
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
     return render(request, 'include/paginator.html', {'page_obj': page_obj})
 
-<<<<<<< HEAD
 #-------INCLUDES HERE----------#
 def perfil_view(request):
     template_name = 'profile/profile_main.html'
@@ -71,8 +60,6 @@ def perfil_view(request):
 
     
 
-=======
->>>>>>> 094a617d82c9131fa2dbec39e508b46cb2394086
 
 
 
