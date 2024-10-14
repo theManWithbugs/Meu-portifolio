@@ -5,6 +5,9 @@ from core.forms import NomeSobrenomeForm
 from core.models import *
 from django.core.paginator import Paginator
 
+def home_view(request):
+    return render(request, 'home.html')
+
 def form_view(request):
     text = Profile.objects.all()
     paginator = Paginator(text, 4)
